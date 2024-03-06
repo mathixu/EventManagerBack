@@ -18,10 +18,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManager.Business", "Ev
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManager.Business.Contracts", "EventManager.Business.Contracts\EventManager.Business.Contracts.csproj", "{400D1B20-896C-45AB-9C4E-455B32ED8DC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Tests", "EventManager.Tests\EventManager.Tests.csproj", "{1155528C-A74E-42C1-B677-066B37B9BCB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManager.Tests", "EventManager.Tests\EventManager.Tests.csproj", "{1155528C-A74E-42C1-B677-066B37B9BCB7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{AAD4537E-95AF-4498-9194-70300CDEAB03} = {AAD4537E-95AF-4498-9194-70300CDEAB03}
 		{BB270DC9-7763-4CF5-85E7-9200925ADA3D} = {BB270DC9-7763-4CF5-85E7-9200925ADA3D}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D83C2B10-BDC9-4A99-865C-821D9483AD7D}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Global

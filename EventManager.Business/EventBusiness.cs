@@ -13,6 +13,7 @@ public class EventBusiness : IEventBusiness
         _eventRepository = eventRepository;
     }
 
+    /// <inheritdoc />
     public async Task<Event> CreateAsync(Event entity)
     {
         var validation = ValidateEvent(entity);
@@ -23,11 +24,13 @@ public class EventBusiness : IEventBusiness
         return await _eventRepository.InsertAsync(entity);
     }
 
+    /// <inheritdoc />
     public async Task<IEnumerable<Event>> ListAsync(DateTime? filter = null)
     {
         return await _eventRepository.ListAsync(filter);
     }
 
+    /// <inheritdoc />
     public async Task<Event> UpdateAsync(Guid eventId, Event entity)
     {
         var existing = await _eventRepository.FindAsync(eventId)
@@ -46,6 +49,7 @@ public class EventBusiness : IEventBusiness
         return await _eventRepository.UpdateAsync(existing);
     }
 
+    /// <inheritdoc />
     public async Task DeleteAsync(Guid eventId)
     {
         var existing = await _eventRepository.FindAsync(eventId)
