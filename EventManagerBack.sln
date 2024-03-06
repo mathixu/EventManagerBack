@@ -3,17 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Presentation", "EventManager.Presentation\EventManager.Presentation.csproj", "{B903FCD3-E6B4-4144-BC82-C1B7B72FC35D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManager.Presentation", "EventManager.Presentation\EventManager.Presentation.csproj", "{B903FCD3-E6B4-4144-BC82-C1B7B72FC35D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Models", "EventManager.Models\EventManager.Models.csproj", "{AAD4537E-95AF-4498-9194-70300CDEAB03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManager.Models", "EventManager.Models\EventManager.Models.csproj", "{AAD4537E-95AF-4498-9194-70300CDEAB03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.DAL", "EventManager.DAL\EventManager.DAL.csproj", "{CB922B22-AE33-452D-B669-F48B2D15F67A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManager.DAL", "EventManager.DAL\EventManager.DAL.csproj", "{CB922B22-AE33-452D-B669-F48B2D15F67A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.DAL.Contracts", "EventManager.DAL.Contracts\EventManager.DAL.Contracts.csproj", "{853E664C-B54C-4CDE-9FF0-B08D72321CED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManager.DAL.Contracts", "EventManager.DAL.Contracts\EventManager.DAL.Contracts.csproj", "{853E664C-B54C-4CDE-9FF0-B08D72321CED}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AAD4537E-95AF-4498-9194-70300CDEAB03} = {AAD4537E-95AF-4498-9194-70300CDEAB03}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Business", "EventManager.Business\EventManager.Business.csproj", "{BB270DC9-7763-4CF5-85E7-9200925ADA3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManager.Business", "EventManager.Business\EventManager.Business.csproj", "{BB270DC9-7763-4CF5-85E7-9200925ADA3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Business.Contracts", "EventManager.Business.Contracts\EventManager.Business.Contracts.csproj", "{400D1B20-896C-45AB-9C4E-455B32ED8DC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManager.Business.Contracts", "EventManager.Business.Contracts\EventManager.Business.Contracts.csproj", "{400D1B20-896C-45AB-9C4E-455B32ED8DC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
