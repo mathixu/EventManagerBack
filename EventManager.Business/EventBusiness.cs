@@ -32,4 +32,9 @@ public class EventBusiness : IEventBusiness
 
         return await _eventRepository.InsertAsync(entity);
     }
+
+    public async Task<IEnumerable<Event>> ListAsync(DateTime? filter = null)
+    {
+        return await _eventRepository.ListAsync(filter);
+    }
 }
