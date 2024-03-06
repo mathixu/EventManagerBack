@@ -15,20 +15,10 @@ public class EventBusiness : IEventBusiness
 
     public async Task<Event> CreateAsync(Event entity)
     {
-        if (entity is null)
-            throw new ArgumentNullException(nameof(entity));
+        var validation = ValidateEvent(entity);
 
-        if (string.IsNullOrWhiteSpace(entity.Title))
-            throw new ArgumentException("Title is required", nameof(entity.Title));
-
-        if (string.IsNullOrWhiteSpace(entity.Description))
-            throw new ArgumentException("Description is required", nameof(entity.Description));
-
-        if (entity.Date == default)
-            throw new ArgumentException("Date is required", nameof(entity.Date));
-
-        if (string.IsNullOrWhiteSpace(entity.Location))
-            throw new ArgumentException("Location is required", nameof(entity.Location));
+        if (!string.IsNullOrWhiteSpace(validation))
+            throw new ArgumentException(validation);
 
         return await _eventRepository.InsertAsync(entity);
     }
@@ -36,5 +26,43 @@ public class EventBusiness : IEventBusiness
     public async Task<IEnumerable<Event>> ListAsync(DateTime? filter = null)
     {
         return await _eventRepository.ListAsync(filter);
+    }
+
+    public async Task<Event> UpdateAsync(Guid eventId, Event entity)
+    {
+        var existing = await _eventRepository.FindAsync(eventId)
+            ?? throw new ArgumentException("Event not found");
+        
+        var validation = ValidateEvent(entity);
+
+        if (!string.IsNullOrWhiteSpace(validation))
+            throw new ArgumentException(validation);
+
+        existing.Title = entity.Title;
+        existing.Description = entity.Description;
+        existing.Date = entity.Date;
+        existing.Location = entity.Location;
+        
+        return await _eventRepository.UpdateAsync(existing);
+    }
+
+    private static string ValidateEvent(Event entity)
+    {
+        if (entity is null)
+            return "Event is required";
+
+        if (string.IsNullOrWhiteSpace(entity.Title))
+            return "Title is required";
+
+        if (string.IsNullOrWhiteSpace(entity.Description))
+            return "Description is required";
+
+        if (entity.Date == default)
+            return "Date is required";
+
+        if (string.IsNullOrWhiteSpace(entity.Location))
+            return "Location is required";
+
+        return string.Empty;
     }
 }

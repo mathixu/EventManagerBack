@@ -31,4 +31,18 @@ public class EventRepository : IEventRepository
 
         return await _context.Events.ToListAsync();
     }
+
+    public async Task<Event> UpdateAsync(Event entity)
+    {
+        var result = _context.Events.Update(entity);
+
+        await _context.SaveChangesAsync();
+
+        return result.Entity;
+    }
+
+    public async Task<Event?> FindAsync(Guid id)
+    {
+        return await _context.Events.FindAsync(id);
+    }
 }
