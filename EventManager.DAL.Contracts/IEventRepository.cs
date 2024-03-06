@@ -8,4 +8,5 @@ public interface IEventRepository
     Task<IEnumerable<Event>> ListAsync(DateTime? filter = null);
     Task<Event> UpdateAsync(Event entity);
     Task<Event?> FindAsync(Guid id);
+    Task DeleteAsync(Event entity);
 }

@@ -45,4 +45,11 @@ public class EventRepository : IEventRepository
     {
         return await _context.Events.FindAsync(id);
     }
+
+    public async Task DeleteAsync(Event entity)
+    {
+        _context.Events.Remove(entity);
+
+        await _context.SaveChangesAsync();
+    }
 }

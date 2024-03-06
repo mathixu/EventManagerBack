@@ -46,6 +46,14 @@ public class EventBusiness : IEventBusiness
         return await _eventRepository.UpdateAsync(existing);
     }
 
+    public async Task DeleteAsync(Guid eventId)
+    {
+        var existing = await _eventRepository.FindAsync(eventId)
+            ?? throw new ArgumentException("Event not found");
+
+        await _eventRepository.DeleteAsync(existing);
+    }
+
     private static string ValidateEvent(Event entity)
     {
         if (entity is null)
